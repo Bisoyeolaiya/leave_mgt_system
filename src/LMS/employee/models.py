@@ -1,5 +1,5 @@
 from django.db import models
-from leavemgt.models import Leave_req,Leave_type
+from LMS.leavemgt.models import Leave_req
 import uuid
 
 # Create your models here.
@@ -8,7 +8,6 @@ class Hod_approved(models.Model):
     emp_id = models.ForeignKey('Employee', on_delete=models.CASCADE)
     dept_name = models.ForeignKey('Dept', on_delete=models.CASCADE)
     comment = models.CharField(max_length=1000)
-
 
 
 class Emp_leave_hist(models.Model):
@@ -21,8 +20,8 @@ class Emp_leave_hist(models.Model):
 class Employee(models.Model):
     emp_id = models.CharField(verbose_name='employee id', max_length=10, unique=True, default=uuid.uuid4, editable=False)
     staff_id = models.CharField(max_length=10, unique=True)
-    f_name = models.TextField(verbose_name='First name', max_length=30)
-    l_name = models.TextField(verbose_name='Last name', max_length=30)
+    f_name = models.CharField(verbose_name='First name', max_length=30)
+    l_name = models.CharField(verbose_name='Last name', max_length=30)
     SEX = (
         ('M', 'Male'),
         ('F', 'Female')
@@ -30,7 +29,7 @@ class Employee(models.Model):
     sex = models.CharField(max_length=1, choices=SEX)
     dept_unit = models.CharField(verbose_name='Department Unit', max_length=30)
     home_addr = models.CharField(verbose_name='Home address', max_length=100)
-    des_tn = models.CharField(verbose_name='Designation', max_length=30)
+    designation = models.CharField(verbose_name='Designation', max_length=30)
     phone_num = models.IntegerField(verbose_name='Phone Number', unique=True)
     email_add = models.CharField(verbose_name='Email address', unique=True, max_length=100)
 

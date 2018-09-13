@@ -1,5 +1,5 @@
 from django.db import models
-from employee.models import Employee,Superuser,Hod,Dept
+from LMS.employee.models import Employee,Superuser,Hod,Dept
 # Create your models here.
 
 class GenEmployee(models.Model):

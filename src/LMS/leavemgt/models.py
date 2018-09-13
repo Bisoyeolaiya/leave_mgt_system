@@ -1,5 +1,5 @@
 from django.db import models
-#include leave form,desc that is tied to leave type
+
 # Create your models here.
 class Leave_req(models.Model):
     emp_id = models.CharField(verbose_name='employee id', max_length=10, unique=True)
@@ -19,8 +19,7 @@ class Leave_req(models.Model):
    
     def __str__(self):
         return '%s %s %s' % (self.emp_id, self.leave_type, self.leave_status)
-
-
+ 
     
 class Leave_type(models.Model):
 
@@ -32,7 +31,7 @@ class Leave_type(models.Model):
         ('St', 'Study Leave'),
         ('Cm', 'Compulsory Examination'),
         ('Nm', 'Non-compulsory Examination'),
-        ('Md', 'Medical Leave'),
+        ('Md', 'Medical Leave'),  
         ('Sb', 'Sabbatical Leave')
     )
 
