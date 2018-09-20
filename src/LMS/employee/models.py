@@ -4,10 +4,13 @@ import uuid
 
 # Create your models here.
 
-class Hod_approved(models.Model):
+class Approved(models.Model):
     emp_id = models.ForeignKey('Employee', on_delete=models.CASCADE)
     dept_name = models.ForeignKey('Dept', on_delete=models.CASCADE)
-    comment = models.CharField(max_length=1000)
+    hod_comment = models.TextField(verbose_name='hod comment')
+    hr_comment = models.TextField(verbose_name='hr comment')
+    hod_approved = models.BooleanField(default=False)
+    hr_approved = models.BooleanField(default=False)
 
 
 class Emp_leave_hist(models.Model):
