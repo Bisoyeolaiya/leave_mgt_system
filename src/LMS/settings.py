@@ -37,15 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'employee',
-    'genEmployee',
-    'leavemgt',
-=======
     'LMS.employee',
     'LMS.leavemgt',
     'LMS.genEmployee',
->>>>>>> de292dc034e2caa0684a1bd1276a25380c067908
 ]
 
 MIDDLEWARE = [
