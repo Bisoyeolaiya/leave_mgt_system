@@ -15,10 +15,25 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+<<<<<<< HEAD
 from LMS.employee.views import EmployeeListView,EmployeeDetailView
 
 urlpatterns = [
     url(r'^employees/',EmployeeListView.as_view()),
     url(r'^employees/(?P<pk>\d+)/$',EmployeeDetailView.as_view()),
+=======
+from django.conf import settings
+from .views import home
+from django.conf.urls.static import static
+
+
+urlpatterns = [
+    url(r'^$',home),
+>>>>>>> fe21d5f824e89fd690a0f9dd1af341643fd00b76
     url(r'^admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

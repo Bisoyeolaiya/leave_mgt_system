@@ -1,7 +1,11 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 from django.views.generic import ListView,DetailView
 
 from .models import Employee
+=======
+from django.http import request,response
+>>>>>>> fe21d5f824e89fd690a0f9dd1af341643fd00b76
 # Create your views here.
 
 class EmployeeListView(ListView):
