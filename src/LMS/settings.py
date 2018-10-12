@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'LMS.employee',
     'LMS.leavemgt',
     'LMS.genEmployee',
+    'LMS.account',
 ]
 
 MIDDLEWARE = [

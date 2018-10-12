@@ -1,7 +1,13 @@
 from django.shortcuts import render
-from django.http import request,HttpResponse
-# Create your views here.
+from django.views.generic import View
+from django.contrib.auth.decorators import login_required
 
+
+
+@login_required
 def home(request):
-    return HttpResponse(request,'lms/navbar.html')
+    return render(request,'lms/home.html', {})
+
+def login(request):
+    return render(request,'lms/login.html')
 
