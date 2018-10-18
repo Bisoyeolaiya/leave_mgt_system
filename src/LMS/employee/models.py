@@ -41,7 +41,6 @@ class Employee(models.Model):
 
 class Dept(models.Model):
     dept_name = models.CharField(verbose_name='Department name', max_length=100)
-    hod_name = models.ForeignKey('Hod', on_delete=models.CASCADE)
 
 
 class Hod(models.Model):

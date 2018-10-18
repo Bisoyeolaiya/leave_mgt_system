@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'LMS.employee',
+    'LMS.general',
     'LMS.leavemgt',
-    'LMS.genEmployee',
-    'LMS.account',
+    'account',
+    'material',
+    'material.frontend'
 ]
 
 MIDDLEWARE = [
@@ -123,6 +125,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+AUTH_USER_MODEL = 'account.CustomUser'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "LMS/static_LMS"),

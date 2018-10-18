@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/customLogin.css' %}"/>
+{% endblock%}
+
+{% block content1%}
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img  src="{% static '/img/slide2.png' %}" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form action="" method="post" id="login-form">
+        <input type="hidden" name="csrfmiddlewaretoken" value={{csrf_token}}>
+        <div class="form-row">
+          <input type="text" name="username" autofocus="" maxlength="254" required="" id="id_username">
+        </div>
+        <div class="form-row">
+          <input type="password" name="password" required="" id="id_password">
+        </div>
+        
+        
+        <div class="submit-row">
+          <label>&nbsp;</label><input type="submit" value="Log in">
+        </div>
+      </form>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Go to the Site</a>
+      </div>
+  
+    </div>
+  </div>
+    
+{% endblock%}
+
+
+
+
