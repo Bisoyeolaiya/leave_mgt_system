@@ -187,10 +187,8 @@ li,ul{
 
 #navigation {
     background: #0e1a35;
-}
-
-#navigation {
     padding: 0;
+    width:20%
 }
 
 .display-table {
@@ -362,6 +360,7 @@ header {
     font-weight: 500;
     padding: 28px 20px;
     text-decoration: none;
+    
 }
 
 .navi i {

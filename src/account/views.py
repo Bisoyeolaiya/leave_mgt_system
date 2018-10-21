@@ -31,7 +31,11 @@ class SignUp(generic.CreateView):
             emp_form.save()
             return HttpResponseRedirect(self.success_url)
         print(userform.error_messages)
+<<<<<<< HEAD
         return HttpResponseRedirect('registration/signup.html')
+=======
+        return HttpResponseRedirect('registration/signup')
+>>>>>>> 9dbbf9cc19d10657432a3407ad0bd41daa631839
 
 def Login(request):
     
