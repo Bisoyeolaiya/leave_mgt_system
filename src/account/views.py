@@ -5,10 +5,9 @@ from django.views import generic
 from django.http import request,HttpResponseRedirect
 from LMS.employee.models import Employee
 
-from .forms import CustomUserCreationForm,UserLoginForm,LmsSignUp
+from .forms import UserLoginForm,LmsSignUp
 
 class SignUp(generic.CreateView):
-    form_class = CustomUserCreationForm
     employee_form = LmsSignUp
     success_url = reverse_lazy('home')
     template_name = 'registration/signup.html'
@@ -25,11 +24,13 @@ class SignUp(generic.CreateView):
         userform = CustomUserCreationForm(request.POST or None)
         if userform.is_valid():
             user = userform.save(commit=False)
+            print(user)
             user.save()
             new_user = authenticate(username=user.username,password=user.password)
             login(request,new_user)
             emp_form.save()
             return HttpResponseRedirect(self.success_url)
+        print(userform.error_messages)
         return HttpResponseRedirect('registration/signup.html')
 
 def Login(request):
