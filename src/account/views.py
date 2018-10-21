@@ -25,12 +25,14 @@ class SignUp(generic.CreateView):
         userform = CustomUserCreationForm(request.POST or None)
         if userform.is_valid():
             user = userform.save(commit=False)
+            print(user)
             user.save()
             new_user = authenticate(username=user.username,password=user.password)
             login(request,new_user)
             emp_form.save()
             return HttpResponseRedirect(self.success_url)
-        return HttpResponseRedirect('registration/signup.html')
+        print(userform.error_messages)
+        return HttpResponseRedirect('registration/signup')
 
 def Login(request):
     

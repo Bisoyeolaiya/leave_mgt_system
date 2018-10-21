@@ -46,7 +46,6 @@ html {
     width: 90%;
     max-width: 450px;
     position: relative;
-    padding: 0px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;
@@ -258,4 +257,11 @@ html {
   
   #icon {
     width:30%;
+  }
+
+  .form-row{
+    display: contents;
+    flex-wrap: nowrap;
+    margin-left: 0px;
+    margin-right: 0px;
   }
