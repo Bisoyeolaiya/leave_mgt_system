@@ -8,7 +8,7 @@ html {
   }
   
   a {
-    color: #92badd;
+    color: #02111f;
     display:inline-block;
     text-decoration: none;
     font-weight: 400;
@@ -111,7 +111,7 @@ html {
     transform: scale(0.95);
   }
   
-  input[type=text] {
+  input[type=text] ,input[type=password]{
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -122,6 +122,7 @@ html {
     font-size: 16px;
     margin: 5px;
     width: 85%;
+    height:40px;
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -225,20 +226,10 @@ html {
     animation-delay: 1s;
   }
   
-  /* Simple CSS3 Fade-in Animation */
-  .underlineHover:after {
-    display: block;
-    left: 0;
-    bottom: -10px;
-    width: 0;
-    height: 2px;
-    background-color: #56baed;
-    content: "";
-    transition: width 0.2s;
-  }
+  
   
   .underlineHover:hover {
-    color: #0d0d0d;
+    color: #3390c5;
   }
   
   .underlineHover:hover:after{
