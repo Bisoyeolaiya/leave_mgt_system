@@ -45,9 +45,13 @@ def Login(request):
         login(request, user)
         if next:
             return redirect(next)
-        return redirect('/employee/dashboard.html')
+        return redirect('/employee/dashboard/1.html')
 
     context = {
         'form': form,
     }
     return render(request, "registration/login.html", context)
+
+def Logout(request):
+    print('hello')
+    return render(request, "registration/login.html",{})
