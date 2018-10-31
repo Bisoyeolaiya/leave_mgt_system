@@ -57,6 +57,7 @@ def SignUp(request):
 
         elif ((staff_id[0:3]=='adm') and (password == password1)):
     
+<<<<<<< HEAD
             user = CustomUser.object.create_superuser(staff_id=staff_id,first_name=f_name,last_name=l_name,sex=sex,department_unit=dept_unit,home_address=home_addr,designation=designation,email_addr=email_addr,password=password)
             
             emp = Employee(user=user,staff_id=staff_id,f_name=f_name,l_name=l_name,sex=sex,dept_unit=dept_unit,home_addr=home_addr,designation=designation,email_addr=email_addr)
@@ -68,6 +69,18 @@ def SignUp(request):
             return redirect('home')
             
     return render(request,'registration/signup.html',context)
+=======
+    next = request.GET.get('next')
+    form = UserLoginForm(request.POST or None)
+    if form.is_valid():
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password')
+        user = authenticate(username=username, password=password)
+        login(request, user)
+        if next:
+            return redirect(next)
+        return redirect('/employee/dashboard/1.html')
+>>>>>>> bafa7ec6b3b2c4fbda5055dd72cb2fc4f0eb74b4
 
 def Login(request):
     
@@ -101,6 +114,11 @@ def Login(request):
     return render(request, "registration/login.html", context)
 
 def Logout(request):
+<<<<<<< HEAD
     logout(request)
     return redirect('/')
 
+=======
+    print('hello')
+    return render(request, "registration/login.html",{})
+>>>>>>> bafa7ec6b3b2c4fbda5055dd72cb2fc4f0eb74b4
