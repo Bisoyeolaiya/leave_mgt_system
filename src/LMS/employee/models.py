@@ -1,9 +1,13 @@
 from django.db import models
 from LMS.leavemgt.models import Leave_req
 import uuid
+from account.models import CustomUser
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from LMS import settings
+
 
 # Create your models here.
-
 class Approved(models.Model):
     emp_id = models.ForeignKey('Employee', on_delete=models.CASCADE)
     dept_name = models.ForeignKey('Dept', on_delete=models.CASCADE)
@@ -21,6 +25,7 @@ class Emp_leave_hist(models.Model):
     
 
 class Employee(models.Model):
+    user = models.OneToOneField(CustomUser,on_delete=models.CASCADE)
     emp_id = models.CharField(verbose_name='employee id', max_length=10, unique=True, default=uuid.uuid4, editable=False)
     staff_id = models.CharField(max_length=10, unique=True)
     f_name = models.CharField(verbose_name='First name', max_length=30)
@@ -33,11 +38,19 @@ class Employee(models.Model):
     dept_unit = models.CharField(verbose_name='Department Unit', max_length=30)
     home_addr = models.CharField(verbose_name='Home address', max_length=100)
     designation = models.CharField(verbose_name='Designation', max_length=30)
-    phone_num = models.IntegerField(verbose_name='Phone Number', unique=True)
-    email_add = models.CharField(verbose_name='Email address', unique=True, max_length=100)
+    phone_num = models.IntegerField(verbose_name='Phone Number',default='0')
+    email_addr = models.CharField(verbose_name='Email address', max_length=100)
+
+
+    def create_profile(created,**kwargs):
+        if created:
+            employee = Employee.objects.create(**kwargs)
+
 
     def __str__(self):
         return '%s %s' % (self.f_name, self.staff_id)
+
+    
 
 class Dept(models.Model):
     dept_name = models.CharField(verbose_name='Department name', max_length=100)
@@ -56,14 +69,4 @@ class Superuser(models.Model):
         return '%s' % (self.name)
 
 
-
-        
-
-
-
-    
-
-
-
-        
 

@@ -11,31 +11,49 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#arcsstee.html">ARCSSTEE</a>
+              <a class="nav-link" href="#arcsstee">ARCSSTEE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#lms/aboutlms.html">About LMS</a>
+              <a class="nav-link" href="#aboutlms">About LMS</a>
             </li>
           </ul>
         </div>
-        <form class="form-inline">
-          <button class="btn btn-sm btn-outline-success" type="button">
-            <a class="nav-link" href="/users/signup">
-              Sign up
-            </a>
-          </button>
 
+       
+        {% if object.staff_id %}
+        
         <form class="form-inline">
           <button class="btn btn-sm btn-outline-success" type="button">
-            <a class="nav-link" href="/users/login">
-              Login
+            <a class="nav-link" href="/users/logout/">
+              Logout
             </a>
           </button>
         </form>
+        
+        {% else %}
+
+
+        <form class="form-inline">
+                  <button class="btn btn-sm btn-outline-success" type="button">
+                    <a class="nav-link" href="/users/login/">
+                      Login
+                    </a>
+                  </button>
+                </form>
+       
+       <form class="form-inline">
+          <button class="btn btn-sm btn-outline-success" type="button">
+            <a class="nav-link" href="/users/signup/">
+              Signup
+            </a>
+          </button>
+        </form>
+
+        
       </nav>
   </div>
-      
+      {% endif %}
 {% endblock %}

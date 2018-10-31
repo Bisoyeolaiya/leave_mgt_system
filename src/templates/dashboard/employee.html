@@ -3,7 +3,9 @@
 {%load static%}
 
 
-{% block style %}
+{% block style%}
+<link rel="stylesheet" href="{% static '/css/customHome.css' %}"/>
+<link rel="stylesheet" href="{% static '/css/dashboardcss/notif.css' %}"/>
 {% endblock %}
 
 {% block content1 %}
@@ -27,12 +29,101 @@
      </div> 
 </div>
 
+<div  class="col-9">
+  <header>
 
-<div>
-      <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">{{object.f_name}}  {{object.l_name}}</div>
+    <div class="notif-btn">
+        <img src="{% static '/img/notification.png' %}" >
+        <p>1 new notification</p>
+        
+    </div>
+  </header>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <div class = row>
+                    <div class = "col-7">
+                      <p></p>
+                      <p>Staff ID : {{object.staff_id}}</p> 
+                      <p>Staff Name : {{object.f_name}} {{object.l_name}}</p>
+                      <p>Staff Department : {{object.department}}</p>
+                      <p>Sex:{{object.sex}}</p>
+                      <p>Department Unit: {{object.dept_unit}}</p>
+                      <p>Designation: {{object.designation}}</p>
+                      <p>Email address: {{object.email_add}}</p>
+                      <p>Phone Number: {{object.phone_num}}</p>
+                    </div>
+          
 
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">{{EditProfile.as_p}}</div>
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <p></p>
+                        <div class="adjust-image">
+                        <img src="{% static '/img/profilepic.png' %}" >
+                      </div>
+                    </div>
+        </div>
+    </div>
+
+
+
+    <!-- Edit Profile Tab -->
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+            <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="first_name">First Name</label>
+                    <input type="text" class="form-control" id="first_name" placeholder="First Name">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="Email"> Email Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="{{EditProfile.email_add.label}}">
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress2">Home Address</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="Designation">Designation</label>
+                      <input type="Designation" class="form-control" id="designation">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="dept">Department Unit</label>
+                        <input type="dept" class="form-control" id="dept_unit">
+                      </div>
+                  </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">Phone Number</label>
+                    <input type="Number" class="form-control" id="inputCity">
+                  </div>
+                  
+                  <div class="form-group col-md-6">
+                    <label for="sex">Sex</label>
+                    <select id="sex" class="form-control">
+                      <option selected>Choose...</option>
+                      <option selected>Male</option>
+                      <option selected>Female</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </form>
+
+
+
+
+
+
+        </div>
 
         <div class="tab-pane fade" id="v-pills-leave_history" role="tabpanel" aria-labelledby="v-pills-leave_history-tab">          
             <div class="table-responsive">
@@ -51,13 +142,13 @@
                   <tbody>
                     
                     <tr>
-                      <td>1,006</td>
-                      <td>nibh</td>
-                      <td>elementum</td>
-                      <td>imperdiet</td>
-                      <td>Duis</td>
-                      <td>1,007</td>
-                      <td>sagittis</td>
+                      <td>1</td>
+                      <td>Casual</td>
+                      <td>03/02/2018</td>
+                      <td>Pending</td>
+                      <td>07/02/2018</td>
+                      <td>12/02/2018</td>
+                      <td>View more</td>
                     </tr>
                     
                   </tbody>
@@ -65,7 +156,40 @@
               </div>
             </div>
 
-        <div class="tab-pane fade" id="v-pills-leave_request" role="tabpanel" aria-labelledby="v-pills-leave_request-tab">{{leave_req.as_p}}</div>
+        <div class="tab-pane fade" id="v-pills-leave_request" role="tabpanel" aria-labelledby="v-pills-leave_request-tab">
+
+            <form>
+                    <div class="form-group col-md-4">
+                        <label for="sex">Leave Type</label>
+                        <select id="sex" class="form-control">
+                          <option selected>Choose...</option>
+                          <option selected>Male</option>
+                          <option selected>Female</option>
+                        </select>
+                      </div>
+                  <div class="form-group col-md-4">
+                    <label for="first_name">Start Date</label>
+                    <input type="date" class="form-control" id="first_name" placeholder="First Name">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="last_name">End Date</label>
+                    <input type="Date" class="form-control" id="last_name" placeholder="Last Name">
+                  </div>
+                
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <textarea name="comment" form = "userform"></textarea>
+                  </div>
+                  
+                </div>
+                <div class="form-group">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </form>
+
+
+
+        </div>
         
         <div class="tab-pane fade" id="v-pills-leave_status" role="tabpanel" aria-labelledby="v-pills-leave_status-tab">
                 <div class="table-responsive">
@@ -76,22 +200,22 @@
                               <th>Leave Type</th>
                               <th>Application Date</th>
                               <th>Leave Status</th>
-                              <th>SLeave Begins</th>
+                              <th>Leave starts</th>
                               <th>Leave End</th>
-                              <th>Status</th>
+                              <th>Attached Doc</th>
                             </tr>
                           </thead>
                           <tbody>
                             
                             <tr>
-                              <td>1,006</td>
-                              <td>nibh</td>
-                              <td>elementum</td>
-                              <td>imperdiet</td>
-                              <td>Duis</td>
-                              <td>1,007</td>
-                              <td>sagittis</td>
-                              <td>sagittis</td>
+                              <td>1</td>
+                              <td>Annual</td>
+                              <td>3/4/2018</td>
+                              <td>Pending</td>
+                              <td>5/06/2018</td>
+                              <td>6/07/2018</td>
+                              <td>View more</td>
+                      
                             </tr>
                             
                           </tbody>

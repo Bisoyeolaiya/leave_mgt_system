@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{%load static%}
+
+
+{% block style %}
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link rel="stylesheet" href="{% static '/css/fontawesome.min.css' %}" />
+<link rel="stylesheet" href="{% static '/css/form-elements.css' %}" />
+<link rel="stylesheet" href="{% static '/css/customSignUp.css' %}" />
+{% endblock%}
+
+
+{% block content1 %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+            <form role="form" action="" method="post" class="f1">
+                {% csrf_token %}
+                <h3>Create an account</h3>
+                <p>Fill in the form to get instant access</p>
+                <div class="f1-steps">
+                    <div class="f1-progress">
+                        <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                    </div>
+                    <div class="f1-step active">
+                        <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                        <p>stage 1</p>
+                    </div>
+                    <div class="f1-step">
+                        <div class="f1-step-icon"><i class="fa fa-key"></i></div>
+                        <p>stage 2</p>
+                    </div>
+                    <div class="f1-step">
+                        <div class="f1-step-icon"><i class="fa fa-twitter"></i></div>
+                        <p>stage 3</p>
+                    </div>
+                </div>
+
+                <fieldset style="display:block;">
+                    <h4>Personal Information</h4>
+                    <div class="form-group">
+                        <label class="sr-only" for="id_f_name">First name</label>
+                        <input type="text" name="f_name" maxlength="30" required="" id="id_f_name" placeholder="First name"
+                            class="f1-first-name form-control" id="f1-first-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only" for="id_l_name">Last name</label>
+                        <input type="text" name="l_name" maxlength="30" required="" id="id_l_name" placeholder="Last name"
+                            class="f1-last-name form-control" id="f1-last-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only" for="id_email_add">Email</label>
+                        <input type="text" name="email_add" maxlength="100" required="" id="id_email_add" placeholder="Email"
+                            class="f1-email form-control" id="f1-last-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only" for="id_home_addr">Home Address</label>
+                        <input type="text" name="home_addr" maxlength="100" required="" id="id_home_addr" placeholder="Home Address"
+                            class="f1-last-name form-control" id="f1-last-name">
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <select name="sex" required="" id="id_sex" class="form-control">
+                            <option value="">Select Gender</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="id_phone_num">Phone Number</label>
+                        <input type="number" name="phone_num" required="" id="id_phone_num" placeholder="Phone Number"
+                            class="f1-phone-num form-control">
+
+                    </div>
+
+                    <div class="f1-buttons">
+                        <button type="button" class="btn btn-next">Next</button>
+                    </div>
+                </fieldset>
+
+
+                
+                <fieldset>
+                        <h4>Office profile</h4>
+                        
+                    <div class="form-group">
+                            <label class="sr-only" for="id_staff_id">Staff ID</label>
+                            <input type="text" name="staff_id" maxlength="10" required="" id="id_staff_id" placeholder="staff_ID" class="f1-id_staff_id form-control">
+                        </div>
+    
+                        <div class="form-group">
+                            <label class="sr-only" for="id_dept_unit">Department Unit</label>
+                            <input type="text" name="dept_unit" maxlength="30" required="" id="id_dept_unit" placeholder="Department Unit" class="f1-dept_unit form-control">
+                        </div>
+    
+                        <div class="form-group">
+                            <label class="sr-only" for="id_designation">Designation</label>
+                            <input type="text"  name="designation" maxlength="30" required="" id="id_designation" placeholder="Designation" class="f1-designation form-control">
+                        </div>
+
+                        <div class="f1-buttons">
+                                <button type="button" class="btn btn-previous">Previous</button>
+                                <button type="button" class="btn btn-next">Next</button>
+                            </div>
+                        
+    
+    
+                    </fieldset>
+
+                <fieldset>
+                    <h4>Set up your account:</h4>
+                    
+                    <div class="form-group">
+                        <label class="sr-only" for="id_password1">Password</label>
+                        <input type="password" name="password" placeholder="Password" class="f1-password form-control"
+                            required id="id_password1">
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="sr-only" for="id_password1">Password</label>
+                        <input type="password" name="password1" placeholder="Confirm Password" class="f1-repeat-password form-control"
+                            id="f1-repeat-password">
+                    </div>
+
+                    <div class="f1-buttons">
+                            <button type="button" class="btn btn-previous">Previous</button>
+                            <button type="submit" class="btn btn-submit">submit</button>
+                        </div>
+                   
+                </fieldset>
+
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<script src="{% static 'js/customSignUp.js' %}"></script>
+<div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 310px; width: 1349px; z-index: -999999; position: fixed;"><img
+        src="assets/img/backgrounds/1.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1349px; height: 899.333px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -294.667px;"></div>
+
+{% endblock %}

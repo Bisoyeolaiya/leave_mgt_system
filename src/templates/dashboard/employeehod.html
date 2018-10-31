@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block style %}
+{% endblock %}
+
+{% block content1 %}
+<div class="container">
+    <div class="row">
+    <div class="col-md-3">
+    <div class="nav flex-column nav-pills" id="v-pills-tab " role="tablist" aria-orientation="vertical">
+
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span>Home</span></a>
+
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Edit Profile</a>
+
+        <a class="nav-link" id="v-pills-leave_history-tab" data-toggle="pill" href="#v-pills-leave_history" role="tab" aria-controls="v-pills-leave_history" aria-selected="false">Leave History</a>
+
+        <a class="nav-link" id="v-pills-leave_request-tab" data-toggle="pill" href="#v-pills-leave_request" role="tab" aria-controls="v-pills-leave_request" aria-selected="false">Request For Leave</a>
+
+        <a class="nav-link" id="v-pills-leave_status-tab" data-toggle="pill" href="#v-pills-leave_status" role="tab" aria-controls="v-pills-leave_status" aria-selected="false">Leave Status</a>
+
+        <a class="nav-link" id="v-pills-leave_applications-tab" data-toggle="pill" href="#v-pills-leave_applications" role="tab" aria-controls="v-pills-leave_applications" aria-selected="false">View Leave Applications</a>
+
+        <a class="nav-link" id="v-pills-track_emp_onleave-tab" data-toggle="pill" href="#v-pills-track_emp_onleave" role="tab" aria-controls="v-pills-leave_emp_onleave" aria-selected="false">Track Officers on Leave</a>
+ 
+        <a class="nav-link" id="v-pills-logout-tab" data-toggle="pill" href="#v-pills-logout" role="tab" aria-controls="v-pills-logout" aria-selected="false">Logout</a>
+     
+     </div> 
+</div>
+
+
+<div>
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">{{object.f_name}}  {{object.l_name}}</div>
+
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">{{EditProfile.as_p}}</div>
+
+        <div class="tab-pane fade" id="v-pills-leave_history" role="tabpanel" aria-labelledby="v-pills-leave_history-tab">          
+            <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                        <th>s/n</th>
+                      <th>Leave Type</th>
+                      <th>Application Date</th>
+                      <th>Leave Status</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Attached Doc</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <tr>
+                      <td>1</td>
+                      <td>Maternity</td>
+                      <td>2/4/2018</td>
+                      <td>Approved</td>
+                      <td>3/5/2018</td>
+                      <td>9/9/2018</td>
+                      <td>View</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+        <div class="tab-pane fade" id="v-pills-leave_request" role="tabpanel" aria-labelledby="v-pills-leave_request-tab">{{leave_req.as_p}}</div>
+        
+        <div class="tab-pane fade" id="v-pills-leave_status" role="tabpanel" aria-labelledby="v-pills-leave_status-tab">
+                <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                                <th>s/n</th>
+                              <th>Leave Type</th>
+                              <th>Application Date</th>
+                              <th>SLeave Begins</th>
+                              <th>Leave End</th>
+                              <th>Status</th>
+                              <th>Attached Doc</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            
+                            <tr>
+                              <td>1</td>
+                              <td>Annual Leave</td>
+                              <td>10/2/2018</td>
+                              <td>10/3/2018</td>
+                              <td>10/4/2018</td>
+                              <td>Pending</td>
+                              <td>View</td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-leave_application" role="tabpanel" aria-labelledby="v-pills-leave_application-tab">{{leave_req.as_p}}</div>
+        
+            <div class="tab-pane fade" id="v-pills-leave_application" role="tabpanel" aria-labelledby="v-pills-leave_application-tab">
+                <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                                <th>s/n</th>
+                              <th>Employee Name</th>
+                              <th>Staff ID</th>
+                              <th>Department</th>
+                              <th>Leave type</th>
+                              <th>Start Date</th>
+                              <th>End Date</th>
+                              <th>Attached Doc</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            
+                            <tr>
+                              <td>1</td>
+                              <td>Emmanuel Toma</td>
+                              <td>11CT678</td>
+                              <td>Finance</td>
+                              <td>Annual Leave</td>
+                              <td>10/3/2018</td>
+                              <td>10/4/2018</td>
+                              <td>View</td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-track_emp_onleave" role="tabpanel" aria-labelledby="v-pills-track_emp_onleave-tab">{{leave_req.as_p}}</div>
+        
+            <div class="tab-pane fade" id="v-pills-track_emp_onleave" role="tabpanel" aria-labelledby="v-pills-track_emp_onleave-tab">
+                <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                                <th>s/n</th>
+                              <th>Employee Name</th>
+                              <th>Staff ID</th>
+                              <th>Department</th>
+                              <th>Leave type</th>
+                              <th>Start Date</th>
+                              <th>End Date</th>
+                              <th>Attached Doc</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            
+                            <tr>
+                              <td>1</td>
+                              <td>Emmanuel Toma</td>
+                              <td>11CT678</td>
+                              <td>Finance</td>
+                              <td>Annual Leave</td>
+                              <td>10/3/2018</td>
+                              <td>10/4/2018</td>
+                              <td>View</td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+            </div> 
+        
+        <div class="tab-pane fade" id="v-pills-logout" role="tabpanel" aria-labelledby="v-pills-logout-tab"></div>
+      </div>
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block jscode%}
+<script src="{% static 'js/dashboard/employeedashboard.js' %}"></script>
+{% endblock %}
