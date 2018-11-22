@@ -38,13 +38,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^users/', include('account.urls')),
     url(r'^employee/', include('LMS.employee.urls')),
-<<<<<<< HEAD
-    url(r'^/', home)
-    
-=======
+
     url(r'^users/', include('django.contrib.auth.urls')),
     url(r'', home)
->>>>>>> bafa7ec6b3b2c4fbda5055dd72cb2fc4f0eb74b4
+    
 ]
 
 if settings.DEBUG:

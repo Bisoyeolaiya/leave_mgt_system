@@ -23,9 +23,7 @@
         <a class="nav-link" id="v-pills-leave_request-tab" data-toggle="pill" href="#v-pills-leave_request" role="tab" aria-controls="v-pills-leave_request" aria-selected="false">Request For Leave</a>
 
         <a class="nav-link" id="v-pills-leave_status-tab" data-toggle="pill" href="#v-pills-leave_status" role="tab" aria-controls="v-pills-leave_status" aria-selected="false">Leave Status</a>
-        
-        <a class="nav-link" id="v-pills-logout-tab" data-toggle="pill" href="#v-pills-logout" role="tab" aria-controls="v-pills-logout" aria-selected="false">Logout</a>
-     
+       
      </div> 
 </div>
 
@@ -157,37 +155,54 @@
             </div>
 
         <div class="tab-pane fade" id="v-pills-leave_request" role="tabpanel" aria-labelledby="v-pills-leave_request-tab">
-
-            <form>
-                    <div class="form-group col-md-4">
-                        <label for="sex">Leave Type</label>
-                        <select id="sex" class="form-control">
-                          <option selected>Choose...</option>
-                          <option selected>Male</option>
-                          <option selected>Female</option>
+            <div class = 'row'>
+              <section class = 'col-md-5'>
+            <form >
+                    <div class="form-group ">
+                        <label for="leave_type_lbl">Leave Type</label>
+                        <select id="leave_type" class="form-control">
+                          <option value = "-1" selected >Choose...</option>
+                          <option value = "1">Maternity Leave</option>
+                          <option value = 2>Religious Leave</option>
+                          <option value = 3>Casual Leave</option>
+                          <option value = 4>Sabbatical Leave</option>
+                          <option value = 5>Sick/Medical Leave</option>
+                          <option value = 6>Examination Leave</option>
+                          <option value = 7>Leave on compassionate ground</option>
+                          <option value = 8>Pre-Retirement Leave</option>
                         </select>
                       </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group ">
                     <label for="first_name">Start Date</label>
                     <input type="date" class="form-control" id="first_name" placeholder="First Name">
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group">
                     <label for="last_name">End Date</label>
                     <input type="Date" class="form-control" id="last_name" placeholder="Last Name">
                   </div>
                 
-                <div class="form-row">
-                  <div class="form-group col-md-6">
+                
+                  <div class="form-group ">
+                      <label for="last_name">Comment</label>
                     <textarea name="comment" form = "userform"></textarea>
                   </div>
                   
-                </div>
                 <div class="form-group">
                 </div>
                 <button type="submit" class="btn btn-primary">Save Changes</button>
               </form>
-
-
+            </section>
+              <section class = 'col-md-6' >
+                <div class='descText'>
+                <p id='desc1'>about maternity</p>
+                <p id='desc2'>about religious</p>
+                <p id='desc3'>about casual</p>
+                <p id='desc4'>about sabbatical</p>
+                <p id='desc5'>about medical</p>
+                <p id='desc6'>about Examination</p>
+                </div>
+              </section>
+            </div>
 
         </div>
         
@@ -223,8 +238,6 @@
                       </div>
         </div>
         
-        
-        <div class="tab-pane fade" id="v-pills-logout" role="tabpanel" aria-labelledby="v-pills-logout-tab"></div>
       </div>
     </div>
     </div>

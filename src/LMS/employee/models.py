@@ -2,9 +2,6 @@ from django.db import models
 from LMS.leavemgt.models import Leave_req
 import uuid
 from account.models import CustomUser
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from LMS import settings
 
 
 # Create your models here.
@@ -42,7 +39,7 @@ class Employee(models.Model):
     email_addr = models.CharField(verbose_name='Email address', max_length=100)
 
 
-    def create_profile(created,**kwargs):
+    def create_profile(self,created,**kwargs):
         if created:
             employee = Employee.objects.create(**kwargs)
 

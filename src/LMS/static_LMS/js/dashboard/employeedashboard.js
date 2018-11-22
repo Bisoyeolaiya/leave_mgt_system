@@ -1,7 +1,13 @@
-$(document).ready(function(){
-    $('[data-toggle="offcanvas"]').click(function(){
-        $("#navigation").toggleClass("hidden-xs");
-    });
- });
- 
+$(document).ready(
+function () {
+    $('.descText').hide();
+    $('select#leave_type').on("change",function () {
+    var toshow = $('p#desc'+$(this).val())
+    console.log(toshow)
+    toshow.show()
+    }
+    )
     
+  })
+
+ 

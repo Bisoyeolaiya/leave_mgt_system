@@ -3,6 +3,7 @@
 
 
 {% block style %}
+<link rel="stylesheet" href="{% static '/css/dashboardcss/notif.css' %}"/>
 {% endblock %}
 
 {% block content1 %}
@@ -25,11 +26,16 @@
 
         <a class="nav-link" id="v-pills-track_emp_onleave-tab" data-toggle="pill" href="#v-pills-track_emp_onleave" role="tab" aria-controls="v-pills-leave_emp_onleave" aria-selected="false">Track Officers on Leave</a>
  
-        <a class="nav-link" id="v-pills-logout-tab" data-toggle="pill" href="#v-pills-logout" role="tab" aria-controls="v-pills-logout" aria-selected="false">Logout</a>
-     
      </div> 
 </div>
+
 <div  class="col-9">
+
+        <div class="notif-btn">
+            <img src="{% static '/img/notification.png' %}" >
+            <p>1 new notification</p> 
+        </div>
+
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
         <div class = row>
@@ -44,13 +50,69 @@
             <p>Phone Number: {{object.phone_num}}</p>
           </div>
 
+          <div class="tab-content" id="v-pills-tabContent">
+              <p></p>
+              <div class="adjust-image">
+              <img src="{% static '/img/profilepic.png' %}" >
+            </div>
+          </div>
+      </div>
+        </div>
 
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
 
-<div>
-      <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">{{object.f_name}}  {{object.l_name}}</div>
+            <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="first_name">First Name</label>
+                    <input type="text" class="form-control" id="first_name" placeholder="First Name">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="Email"> Email Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="{{EditProfile.email_add.label}}">
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress2">Home Address</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="Designation">Designation</label>
+                      <input type="Designation" class="form-control" id="designation">
+                    </div>
 
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">{{EditProfile.as_p}}</div>
+                    <div class="form-group col-md-6">
+                        <label for="dept">Department Unit</label>
+                        <input type="dept" class="form-control" id="dept_unit">
+                      </div>
+                  </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">Phone Number</label>
+                    <input type="Number" class="form-control" id="inputCity">
+                  </div>
+                  
+                  <div class="form-group col-md-6">
+                    <label for="sex">Sex</label>
+                    <select id="sex" class="form-control">
+                      <option selected>Choose...</option>
+                      <option selected>Male</option>
+                      <option selected>Female</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </form>
+
+            </div>
+
 
         <div class="tab-pane fade" id="v-pills-leave_history" role="tabpanel" aria-labelledby="v-pills-leave_history-tab">          
             <div class="table-responsive">
@@ -82,8 +144,62 @@
                 </table>
               </div>
             </div>
+            <div class="tab-pane fade" id="v-pills-leave_request" role="tabpanel" aria-labelledby="v-pills-leave_request-tab">
+                <div class = 'row'>
+                  <section class = 'col-md-5'>
+                <form >
+                        <div class="form-group ">
+                            <label for="leave_type_lbl">Leave Type</label>
+                            <select id="leave_type" class="form-control">
+                              <option selected >Choose...</option>
+                              <option >Maternity Leave</option>
+                              <option >Religious Leave</option>
+                              <option >Casual Leave</option>
+                              <option >Sabbatical Leave</option>
+                              <option >Sick/Medical Leave</option>
+                              <option >Examination Leave</option>
+                              <option >Leave on compassionate ground</option>
+                              <option >Pre-Retirement Leave</option>
+                            </select>
+                          </div>
+                      <div class="form-group ">
+                        <label for="first_name">Start Date</label>
+                        <input type="date" class="form-control" id="first_name" placeholder="First Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="last_name">End Date</label>
+                        <input type="Date" class="form-control" id="last_name" placeholder="Last Name">
+                      </div>
+                    
+                    <div class="form-row">
+                      <div class="form-group ">
+                        <textarea name="comment" form = "userform"></textarea>
+                      </div>
+                      
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                  </form>
+                </section>
+                  <section class = 'col-md-6' >
+                    <div class='descText'>
+                    <p id='desc1' class='descText'>about maternity</p>
+                    <p id='desc2' class='descText' >about religious</p>
+                    <p id='desc3' class='descText '>about casual</p>
+                    <p id='desc4' class='descText'>about sabbatical</p>
+                    <p id='desc5' class='descText'>about medical</p>
+                    <p id='desc6' class='descText'>about Examination</p>
+                    </div>
+                  </section>
+                </div>
+    
+            </div>
+            
 
-        <div class="tab-pane fade" id="v-pills-leave_request" role="tabpanel" aria-labelledby="v-pills-leave_request-tab">{{leave_req.as_p}}</div>
+
+
+
         
         <div class="tab-pane fade" id="v-pills-leave_status" role="tabpanel" aria-labelledby="v-pills-leave_status-tab">
                 <div class="table-responsive">

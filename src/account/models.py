@@ -47,7 +47,7 @@ class CustomUserManager(BaseUserManager):
         return user
 
     
-    def create_hod(self,staff_id,first_name,last_name,sex,department_unit,home_address,designation,password):
+    def create_hod(self,staff_id,first_name,last_name,sex,department_unit,email_addr,home_address,designation,password):
         user = self.create_user(
             staff_id,
             password=password,
@@ -56,10 +56,10 @@ class CustomUserManager(BaseUserManager):
             sex=sex,
             department_unit = department_unit,
             home_address = home_address,
-            designation = designation,
             email_addr = email_addr,
-            is_staff = True,
-            is_hod=True
+            designation = designation,
+            is_staff=True,
+            is_hod = True
         )
         return user
 
