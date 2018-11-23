@@ -20,6 +20,9 @@ class EmployeeDetailView(DetailView):
         context['leave_req']=self.LeaveReq_form_class()
         context['EditProfile']=self.emp_form_class()
         return context
+        
+    def save(self, *args, **kwargs):
+        print(request.POST)
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -32,6 +35,7 @@ class EmployeeDetailView(DetailView):
         else:
             return redirect('/')
 
+    
 
 class HodDetailView(DetailView):
     queryset = Employee.objects.all()

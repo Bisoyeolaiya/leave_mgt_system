@@ -2,6 +2,7 @@ from django.db import models
 from LMS.leavemgt.models import Leave_req
 import uuid
 from account.models import CustomUser
+from django.urls import reverse
 
 
 # Create your models here.
@@ -43,6 +44,8 @@ class Employee(models.Model):
         if created:
             employee = Employee.objects.create(**kwargs)
 
+    def get_absolute_url(self):
+        return reverse(employee.views.EmployeeDetailView, args=[(self.id)])
 
     def __str__(self):
         return '%s %s' % (self.f_name, self.staff_id)

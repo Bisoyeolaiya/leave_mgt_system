@@ -34,7 +34,6 @@ from .views import home
 
 urlpatterns = [
     
-    url(r'^home/$', home, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^users/', include('account.urls')),
     url(r'^employee/', include('LMS.employee.urls')),
