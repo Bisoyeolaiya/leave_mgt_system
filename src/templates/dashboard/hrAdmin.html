@@ -31,11 +31,20 @@
      
      </div> 
 </div>
+
+<header>
+<div class="notif-btn">
+  <img src="{% static '/img/notification.png' %}" >
+  <p>1 new notification</p>
+  
+</div>
+</header>
+
 <div  class="col-9">
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
         <div class = row>
-          <div class = "col-6">
+          <div class = "col-7">
             <p>Staff ID : {{object.staff_id}}</p> 
             <p>Staff Name : {{object.f_name}} {{object.l_name}}</p>
             <p>Staff Department : {{object.department}}</p>
@@ -45,6 +54,15 @@
             <p>Email address: {{object.email_add}}</p>
             <p>Phone Number: {{object.phone_num}}</p>
           </div>
+
+          <div class="tab-content" id="v-pills-tabContent">
+            <p></p>
+            <div class="adjust-image">
+            <img src="{% static '/img/profilepic.png' %}" >
+          </div>
+        </div>
+</div>
+</div>
 
 
 <div>
